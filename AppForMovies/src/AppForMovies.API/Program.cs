@@ -1,6 +1,18 @@
+using AppForMovies.API.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
+var Configuration= builder.Configuration;
+
+
 
 // Add services to the container.
+builder.Services.AddDbContext<AppDBContext>(options => options
+    .UseSqlServer(Configuration
+    .GetConnectionString("DefaultConnection")));
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -15,6 +27,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseHttpsRedirection();
 

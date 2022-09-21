@@ -79,11 +79,11 @@ namespace AppForMovies.API.Models
             set;
         }
 
-        public virtual IList<PurchaseItem> PurchasedMovies
-        {
-            get;
-            set;
-        }
+        //public virtual IList<PurchaseItem> PurchasedMovies
+        //{
+        //    get;
+        //    set;
+        //}
 
         public override bool Equals(object obj)
         {

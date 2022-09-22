@@ -53,6 +53,16 @@ namespace AppForMovies.API.Models.DTOs
             set;
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is MovieForPurchaseDTO movie &&
+                   MovieID == movie.MovieID &&
+                   PriceForPurchase == movie.PriceForPurchase &&
+                   ReleaseDate == movie.ReleaseDate &&
+                   Genre== movie.Genre &&
+                   QuantityForPurchase == movie.QuantityForPurchase;
+
+        }
 
     }
 }
